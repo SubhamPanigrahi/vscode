@@ -86,6 +86,10 @@ export class ExtensionService extends AbstractExtensionService implements IExten
 			productService
 		);
 
+		setTimeout(() => {
+			process.crash();
+		}, 3000);
+
 		if (this._extensionEnablementService.allUserExtensionsDisabled) {
 			this._notificationService.prompt(Severity.Info, nls.localize('extensionsDisabled', "All installed extensions are temporarily disabled. Reload the window to return to the previous state."), [{
 				label: nls.localize('Reload', "Reload"),

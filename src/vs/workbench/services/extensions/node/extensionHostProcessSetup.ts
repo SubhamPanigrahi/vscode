@@ -77,10 +77,10 @@ function patchProcess(allowExit: boolean) {
 	} as (code?: number) => never;
 
 	// override Electron's process.crash() method
-	process.crash = function () {
-		const err = new Error('An extension called process.crash() and this was prevented.');
-		console.warn(err.stack);
-	};
+	// process.crash = function () {
+	// 	const err = new Error('An extension called process.crash() and this was prevented.');
+	// 	console.warn(err.stack);
+	// };
 }
 
 interface IRendererConnection {
